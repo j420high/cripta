@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cripta/Decripta</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    const mappa = {
+      'a':'d','b':'g','c':'i','d':'m','e':'k','f':'h','g':'r','h':'t','i':'b',
+      'l':'u','m':'v','n':'s','o':'z','p':'x','q':'j','r':'y','s':'n','t':'c',
+      'u':'a','v':'q','z':'w'
+    };
+
+    function criptaTesto(testo, mode) {
+      const map = mode === 'cripta' ? mappa : Object.fromEntries(Object.entries(mappa).map(([k,v])=>[v,k]));
+      return testo.toLowerCase().split('').map(c => map[c] ?? c).join('');
+    }
+
+    function esegui() {
+      const testo = document.getElementById("input").value;
+      const mode = document.querySelector("input[name='mode']:checked").value;
+      document.getElementById("output").value = criptaTesto(testo, mode);
+    }
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Cripta / Decripta</h1>
+    <textarea id="input" placeholder="Inserisci testo..."></textarea>
+    <div class="radio">
+      <label><input type="radio" name="mode" value="cripta" checked> Cripta</label>
+      <label><input type="radio" name="mode" value="decripta"> Decripta</label>
+    </div>
+    <button onclick="esegui()">Esegui</button>
+    <textarea id="output" readonly placeholder="Risultato..."></textarea>
+  </div>
+</body>
+</html>
