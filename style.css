@@ -20,6 +20,7 @@ textarea {
   min-width:  200px;
   min-height: 100px;
   background-color: rgba(0, 0, 0, 0.445);
+  backdrop-filter: blur(20px);
   color:whitesmoke;
   border-radius: 25px;
 }
@@ -33,6 +34,7 @@ button {
   border: none;
   border-radius: 25px;
   position: absolute;
+  backdrop-filter: blur(20px);
   top: 450px; left: 30px;
 }
 .radio {
@@ -49,11 +51,13 @@ h1 {
   top: 10px;
   left: 50px;
   border-radius: 5px;
+  backdrop-filter: blur(20px);
 }
 label {
  position: absolute;
  border-radius: 3px;
+ backdrop-filter: blur(20px);
 }
-.cripta{width: 100px; top: 250px;left: 28px;background-color: rgba(0, 0, 0, 0.445);}
+.cripta{width: 100px; top: 250px;left: 28px;background-color: rgba(0, 0, 0, 0.445); }
 .decripta{width: 120px; top: 250px;left:150px; background-color: rgba(0, 0, 0, 0.445);}
-
+.tag{position: absolute; width: 420px; left: 60px; bottom: 10px; }
