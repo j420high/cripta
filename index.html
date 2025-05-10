@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cripta/Decripta</title>
+  <title>jj.silence</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
   <script>
@@ -30,16 +30,17 @@
     }
   </script>
 </head>
-<body>
-  <div class="container">
-    <h1>Cripta / Decripta</h1>
-    <textarea id="input" placeholder="Inserisci testo..."></textarea>
-    <div class="radio">
-      <label><input type="radio" name="mode" value="cripta" checked> Cripta</label>
-      <label><input type="radio" name="mode" value="decripta"> Decripta</label>
-    </div>
+<body background="background.png">
+ 
+    <h1>J.J SILENCE</h1>
+  
+    <textarea class="inserisci" id="input" placeholder="Inserisci testo..."></textarea>
+    
+      <label class="cripta"><input type="radio" name="mode" value="cripta" checked> Cripta</label>
+      <label class="decripta"><input type="radio" name="mode" value="decripta"> Decripta</label>
+    
     <button onclick="esegui()">Esegui</button>
     <textarea id="output" readonly placeholder="Risultato..."></textarea>
-  </div>
+  
 </body>
 </html>
