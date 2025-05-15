@@ -1,0 +1,67 @@
+<!--sasso carta forbici-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>sasso carta forbici</title>
+
+    </head>
+    <body>
+        
+            <h1 id="titolo">Benvenuto/a</h1>
+            <h2 id="informazione">Fai la tua scelta</h2>
+            <h3 id="carta" onclick="cliccatoCarta()">- carta</h3>
+            <h3 id="forbici" onclick="cliccatoForbici()">- forbici</h3>
+            <h3 id="sasso" onclick="cliccatoSasso()">- sasso</h3>
+            <button id="pulsante" onclick="verdetto()">Conferma</button>
+        
+        
+        <script>
+            alert("Sono Javascript e sono pronto a servirti ;)"); 
+            //benvenuto + nome inserito 
+            //var nomeGiocatore = "Prof"; 
+            //per la tendina in cui inserisci il nome del giocatore 
+            var nomeGiocatore = window.prompt("Ciao, inserisci il tuo nome: "); 
+            //"per stampare il valore inerito da utente"
+            //prendo un documento che è HTML dentro di esso trovo l'elemento che ha getElementById = "titolo"
+            //innerHTML --> parametro che contiene la scritta benvenuto
+            document.getElementById("titolo").innerHTML = "Benvenuto/a " + nomeGiocatore; 
+            //console.log(titolo); 
+            //variabile utente
+            var sceltaUtente; 
+            //funzione per quando l'utente sceglie (carta, sasso, forbici)
+            //scrivere come abbiamo scritto l'id
+            function cliccatoCarta() {
+                sceltaUtente = "carta"; 
+                alert(nomeGiocatore + " hai scelto " + sceltaUtente); 
+            }  
+            function cliccatoForbici() {
+                sceltaUtente = "forbici"; 
+                alert(nomeGiocatore + " hai scelto " + sceltaUtente); 
+            }  
+            function cliccatoSasso() {
+                sceltaUtente = "sasso"; 
+                alert(nomeGiocatore + " hai scelto " + sceltaUtente); 
+            }  
+            function verdetto() {
+                //per cancellare tutto e far scrivere se abbiamo perso o vinto --> style.display = "nome"
+                document.getElementById("carta").style.display = "none"; 
+                document.getElementById("forbici").style.display = "none"; 
+                document.getElementById("sasso").style.display = "none"; 
+                document.getElementById("pulsante").style.display = "none"; 
+                //variabile computer 
+                var sceltaComputer;
+                //vince sempre il pc 
+                if(sceltaUtente == "carta"){
+                    sceltaComputer = "forbici"; 
+                }else if(sceltaUtente == "forbici"){
+                    sceltaComputer = "sasso"; 
+                }else if(sceltaUtente == "forbici"){
+                    sceltaComputer = "carta"; 
+                }
+                document.getElementById("titolo").innerHTML = nomeGiocatore + " hai perso"; 
+                document.getElementById("informazione").innerHTML = "Il computer ha scelto " + sceltaComputer + ". tu, hai scelto " + sceltaUtente + "."; 
+            }
+        </script>
+    </body>
+</html>
